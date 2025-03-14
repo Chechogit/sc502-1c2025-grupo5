@@ -308,8 +308,11 @@ aside h3 {
     color: #ffffff;
     height: 40px;
     width: auto;
+    text-decoration: none;
     padding-left: 15px;
     padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .boton:hover {
@@ -318,6 +321,7 @@ aside h3 {
 }
 
 .boton-negativo {
+    
     background-color: #303030;
     border-radius: 5px;
     border-style: solid;
@@ -326,8 +330,11 @@ aside h3 {
     color: #ffffff;
     height: 40px;
     width: auto;
+    text-decoration: none;
     padding-left: 15px;
     padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .boton-negativo:hover {
@@ -388,7 +395,7 @@ aside h3 {
     width: auto;
 }
 
-.informacionPago-nCVC {
+.informacionPago-nCVV {
     border-radius: 5px;
     border-style: solid;
     border-width: thin;
@@ -405,4 +412,11 @@ aside h3 {
     overflow-y: scroll;
     background-color: #e4e4e4;
     padding: 20px;
+}
+
+.imgInfoCVV {
+    position:absolute; 
+    border-radius: 10px; 
+    display: none; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
 }

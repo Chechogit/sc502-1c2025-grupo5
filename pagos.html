@@ -16,7 +16,7 @@
 
 <body style="background-color: #04325b;">
     <header>
-        <h1>Registro de Usuarios</h1>
+        <h1>Pagos</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
@@ -39,9 +39,10 @@
 
             <div class="detalles-Reservacion mb-5">
                 <h4 class="subTitulos">Detalles de la Reservación</h4>
-                <h6>Fecha:</h6>
-                <h6>Ubicación:</h6>
-                <h5>Total:</h5>
+                <h6 id="espacioPago">Espacio:</h6>
+                <h6 id="nombreUsuarioPago">Nombre:</h6>
+                <h6 id="fechaPago">Fecha:</h6>
+                <h6 id="horaPago">Hora:</h6>
             </div>
 
             <div class="mb-5">
@@ -74,11 +75,17 @@
                             </div>
                         </div>
                         <div class="mb-3 col">
-                            <label class="form-label subTitulos">CVC</label>
-                            <i class="bi bi-question-circle-fill"></i>
+                            <label class="form-label subTitulos">CVV</label>
+
+                            <i id="cvvQueEs" class="bi bi-question-circle-fill"></i>
+                            <div>
+                                <img id="imgCVV" class="imgInfoCVV"
+                                    src="https://www.bbva.com.ar/content/dam/public-web/argentina/images/Imagen_tarjeta_1.im1710786753063im.png?imwidth=1176"
+                                    height="200" width="300">
+                            </div>
                             <div>
                                 <i class="bi bi-lock"></i>
-                                <input type="number" class="informacionPago-nCVC" id="nCVC"
+                                <input type="number" class="informacionPago-nCVV" id="nCvv"
                                     placeholder="Código de Seguridad">
                             </div>
                         </div>
@@ -138,7 +145,7 @@
                     feugiat augue id luctus.<br>
                 </div>
                 <div>
-                    <input type="checkbox">
+                    <input id="termCond" type="checkbox">
                     <label>He leído y acepto los terminos y condiciones</label>
                 </div>
             </div>
@@ -146,10 +153,10 @@
             <div class="mb-5">
                 <div class="row justify-content-center">
                     <div class="col-2">
-                        <button type="button" class="boton">Pagar</button>
+                        <a id="btnPagar" class="boton">Pagar</a>
                     </div>
                     <div class="col-2">
-                        <button type="button" class="boton-negativo">Cancelar</button>
+                        <a class="boton-negativo" href="index.html">Cancelar</a>
                     </div>
                 </div>
             </div>
