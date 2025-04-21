@@ -265,78 +265,158 @@ aside h3 {
 
 }
 
-/* Estilos generales */
-:root {
-    --primary-color: #2c3e50;
-    --secondary-color: #3498db;
-    --accent-color: #e74c3c;
-    --light-color: #ecf0f1;
-    --dark-color: #2c3e50;
+/*---------------------------------------------------------*/
+
+.navbar {
+    background-color: #072145;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f9fa;
-    color: var(--dark-color);
-    display: flex;
-    flex-direction: column;
+/*#3F7D20*/
+
+.infoGeneral {
+    align-items: flex-start;
+    width: 1250px;
     min-height: 100vh;
+    background-color: #015a95;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-left: 125px;
+    padding-right: 125px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 12px 22px rgba(0, 0, 0, 0.2);
 }
 
-main {
-    flex: 1;
-    padding-bottom: 3rem;
-}
-
-/* Footer corregido */
-.footer {
-    background-color: var(--dark-color);
-    color: white;
-    padding: 2rem 0;
-    margin-top: auto;
-}
-
-.footer-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* Tarjetas de espacios */
-.card {
-    transition: transform 0.3s;
-    height: 100%;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-/* Selector de horas */
-.time-slot {
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.time-slot.selected {
-    background-color: var(--secondary-color) !important;
-    color: white !important;
-}
-
-.time-slot.unavailable {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
-/* Alineación especial para cancha */
-.card-img-container {
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.card-img-container img {
-    width: 100%;
+.contenidoCentral {
+    border-radius: 10px;
+    align-items: flex-start;
+    width: 1000px;
     height: auto;
+    background-color: #ffffff;
+    justify-content: center;
+    padding: 30px;
+    color: #303030;
+}
+
+.boton {
+    background-color: #038587;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 0;
+    font-weight: bold;
+    color: #ffffff;
+    height: 40px;
+    width: auto;
+    text-decoration: none;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.boton:hover {
+    background-color: #026f6c;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.boton-negativo {
+    
+    background-color: #303030;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 0;
+    font-weight: bold;
+    color: #ffffff;
+    height: 40px;
+    width: auto;
+    text-decoration: none;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.boton-negativo:hover {
+    background-color: #1f1f1f;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.divTitulo {
+    color: #ffff;
+    background-color: #04325b;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.detalles-Reservacion {
+    border-radius: 10px;
+    width: auto;
+    height: auto;
+    background-color: #e4e4e4;
+    padding: 10px;
+}
+
+.subTitulos {
+    font-weight: bold;
+    color: #303030;
+}
+
+.informacionPago {
+    border-radius: 5px;
+    width: auto;
+    height: auto;
+    background-color: #ffffff;
+    border-style: solid;
+    border-width: thin;
+    border-color: #afafaf;
+    padding: 20px;
+}
+
+.informacionPago-nTarjeta {
+    border-radius: 5px;
+    border-style: solid;
+    border-width: thin;
+    border-color: #afafaf;
+    padding-left: 10px;
+    height: 40px;
+    width: auto;
+}
+
+.informacionPago-titularTarjeta {
+    border-radius: 5px;
+    border-style: solid;
+    border-width: thin;
+    border-color: #afafaf;
+    padding-left: 10px;
+    height: 40px;
+    width: auto;
+}
+
+.informacionPago-nCVV {
+    border-radius: 5px;
+    border-style: solid;
+    border-width: thin;
+    border-color: #afafaf;
+    padding-left: 10px;
+    height: 40px;
+    width: auto;
+}
+
+.pagoTerminosCondiciones {
+    border-radius: 5px;
+    height: 200px;
+    width: auto;
+    overflow-y: scroll;
+    background-color: #e4e4e4;
+    padding: 20px;
+}
+
+.imgInfoCVV {
+    position:absolute; 
+    border-radius: 10px; 
+    display: none; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
 }
