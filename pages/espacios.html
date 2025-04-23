@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Espacios Disponibles</title>
-    <link rel="stylesheet" href="styles/styles.css">
-    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css\styles.css">
 </head>
 <body>
     <header>
@@ -38,8 +37,8 @@
                 <label for="fecha">Fecha de Reserva:</label>
                 <input type="date" id="fecha" name="fecha" required>
                 <label for="hora">Hora de Reserva:</label>
-                <input type="time" id="hora" name="hora" min="8" max="20" required>
-                <button type="submit" id="reservar">Reservar</button>
+                <input type="number" id="hora" name="hora" min="8" max="20" required>
+                <button type="submit">Reservar</button>
             </form>
             <div id="confirmacion" class="confirmacion">
                 ¡Espacio agendado con éxito!
