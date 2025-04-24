@@ -1,0 +1,84 @@
+<?php
+session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espacios Disponibles</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <script src="../js/script.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Espacios Disponibles</h1>
+        <?php if (isset($_SESSION['nombre'])): ?>
+            <li>Hola, <?php echo $_SESSION['nombre']; ?> | <a href="logout.php">Cerrar sesión</a></li>
+        <?php else: ?>
+            <li><a href="login.php">Login</a></li>
+            <li><a href="registro.php">Registro</a></li>
+        <?php endif; ?>
+        <nav>
+            <ul>
+                <li><a href="../index.php">Inicio</a></li>
+                <li><a href="pagos.php">Pagos</a></li>
+                <li><a href="espacios.php">Espacios</a></li>
+                <li><a href="login.php">Login</a></li>
+                <li><a href="registro.php">Registro</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <?php if (isset($_SESSION['id_usuario'])): ?>
+            <div class="form-container">
+                <h2>Selecciona el espacio que deseas reservar</h2>
+                <form id="formReserva">
+                    <label for="espacio">Espacio a reservar:</label>
+                    <select id="espacio" name="espacio" required>
+                        <option value="">--Selecciona un espacio--</option>
+                        <option value="piscina">Piscina</option>
+                        <option value="cancha_futbol">Cancha de Fútbol</option>
+                        <option value="cancha_basket">Cancha de Baloncesto</option>
+                        <option value="salon_actividades">Salón de Actividades</option>
+                    </select>
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                    <label for="fecha">Fecha de Reserva:</label>
+                    <input type="date" id="fecha" name="fecha" required>
+                    <label for="hora">Hora de Reserva:</label>
+                    <input type="time" id="hora" name="hora" min="8" max="20" required>
+                    <button type="submit" id="reservar">Reservar</button>
+                </form>
+                <div id="confirmacion" class="confirmacion">
+                    ¡Espacio agendado con éxito!
+                </div>
+            </div>
+        <?php else: ?>
+            <!-- Mensaje para usuarios no logueados -->
+            <p style="color: red;">Debes registrarte o iniciar sesión para ver esta sección.</p>
+            <a href="login.php">Iniciar sesión</a> | <a href="registrarse.php">Registrarse</a>
+        <?php endif; ?>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Reservas Municipales.</p>
+    </footer>
+
+    <script>
+        document.getElementById('formReserva').addEventListener('submit', function (event) {
+            event.preventDefault();
+            document.getElementById('confirmacion').style.display = 'block';
+            document.getElementById('formReserva').reset();
+            setTimeout(function () {
+                document.getElementById('confirmacion').style.display = 'none';
+            }, 3000);
+        });
+    </script>
+</body>
+
+</html>

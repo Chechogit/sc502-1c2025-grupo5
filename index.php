@@ -1,3 +1,8 @@
+<?php
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -11,13 +16,19 @@
 <body>
     <header>
         <h1>Gestión de Reservas Municipales</h1>
+        <?php if (isset($_SESSION['nombre'])): ?>
+            <li>Hola, <?php echo $_SESSION['nombre']; ?> | <a href="pages/logout.php">Cerrar sesión</a></li>
+        <?php else: ?>
+            <li><a href="pages/login.php">Login</a></li>
+            <li><a href="pages/registro.php">Registro</a></li>
+        <?php endif; ?>
         <nav>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="pagos.html">Pagos</a></li>
-                <li><a href="espacios.html">Espacios</a></li>
-                <li><a href="registro.html">Registro</a></li>
+                <li><a href="index.php">Inicio</a></li>
+                <li><a href="pages/pagos.php">Pagos</a></li>
+                <li><a href="pages/espacios.php">Espacios</a></li>
+                <li><a href="pages/login.php">Login</a></li>
+                <li><a href="pages/registro.php">Registro</a></li>
             </ul>
         </nav>
     </header>

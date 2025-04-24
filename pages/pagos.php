@@ -4,8 +4,8 @@
 <head>
     <title>Proyecto</title>
     <style></style>
-    <link rel="stylesheet" href="styles/styles.css">
-    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <script src="../js/script.js"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -17,13 +17,19 @@
 <body style="background-color: #04325b;">
     <header>
         <h1>Pagos</h1>
+        <?php if (isset($_SESSION['nombre'])): ?>
+            <li>Hola, <?php echo $_SESSION['nombre']; ?> | <a href="logout.php">Cerrar sesión</a></li>
+        <?php else: ?>
+            <li><a href="login.php">Login</a></li>
+            <li><a href="registro.php">Registro</a></li>
+        <?php endif; ?>
         <nav>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="pagos.html">Pagos</a></li>
-                <li><a href="espacios.html">Espacios</a></li>
-                <li><a href="registro.html">Registro</a></li>
+                <li><a href="../index.php">Inicio</a></li>
+                <li><a href="pagos.php">Pagos</a></li>
+                <li><a href="espacios.php">Espacios</a></li>
+                <li><a href="login.php">Login</a></li>
+                <li><a href="registro.php">Registro</a></li>
             </ul>
         </nav>
     </header>
