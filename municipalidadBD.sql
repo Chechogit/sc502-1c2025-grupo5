@@ -11,12 +11,16 @@ CREATE TABLE usuarios (
     apellido2 VARCHAR(100)
 );
 
+
 CREATE TABLE amenidades (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(100) NOT NULL,
-    descripcion TEXT,
-    ubicacion VARCHAR(100),
-    disponible BOOLEAN DEFAULT TRUE
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    descripcion TEXT,
+    ubicacion VARCHAR(100),
+    disponible BOOLEAN DEFAULT TRUE,
+    reservado BOOLEAN DEFAULT FALSE
+    imagen_url VARCHAR(255)  
+    comentarios VARCHAR(255)
 );
 
 CREATE TABLE reservaciones (
@@ -29,3 +33,4 @@ CREATE TABLE reservaciones (
     FOREIGN KEY (usuario_id) REFERENCES usuarios(id),
     FOREIGN KEY (amenidad_id) REFERENCES amenidades(id)
 );
+

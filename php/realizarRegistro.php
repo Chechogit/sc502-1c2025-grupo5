@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
 
-$conexion = new mysqli("localhost", "root", "root", "municipalidad");
+$conexion = new mysqli("localhost", "root", "", "municipalidad");
 
 if ($conexion->connect_error) {
     echo json_encode(["success" => false, "mensaje" => "Error de conexión a la base de datos."]);
