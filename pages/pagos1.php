@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sección de Pagos</title>
-    <link rel="stylesheet" href="css\styles.css">
-</head>
-<body>
+    <?php
+    include('../partitions/head.php')
+    ?>
+    
+    <body>
     <header>
-        <h1>Pago de Reservas</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="pages/login.html">Login</a></li>
-                <li><a href="pages/pagos.html">Pagos</a></li>
-                <li><a href="pages/espacios.html">Espacios</a></li>
-                <li><a href="pages/registro.html">Registro</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1 class="text-center mb-0">Gestión de Reservas Municipales</h1>
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item"><a class="nav-link active" href="../index.php">Inicio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="login.php">Iniciar Sesión</a></li>
+                            <li class="nav-item"><a class="nav-link" href="registro.php">Registrarse</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
     </header>
     <main>
         <h2>Realizar Pago</h2>
