@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
 
-$conexion = new mysqli("localhost", "root", "", "municipalidad");
+$conexion = new mysqli("localhost", "root", "admin", "municipalidad"); // O usa 'root', 'root' si así es tu XAMPP
 
 if ($conexion->connect_error) {
     echo json_encode(["success" => false, "mensaje" => "Error de conexión a la base de datos."]);
@@ -31,11 +31,12 @@ if ($stmt->num_rows > 0) {
     exit;
 }
 
-// Insertar usuario (asegúrate que la tabla tenga estas columnas)
-$claveHash = password_hash($password, PASSWORD_BCRYPT);
-$stmt = $conexion->prepare("INSERT INTO usuarios (nombre, correo, clave) VALUES (?, ?, ?)");
 $nombreCompleto = $nombre . ' ' . $apellido1 . ' ' . $apellido2;
-$stmt->bind_param("sss", $nombreCompleto, $email, $claveHash);
+$claveHash = password_hash($password, PASSWORD_BCRYPT);
+
+// Registrar el nuevo usuario
+$stmt = $conexion->prepare("INSERT INTO usuarios (cedula, nombre, correo, clave) VALUES (?, ?, ?, ?)");
+$stmt->bind_param("ssss", $cedula, $nombreCompleto, $email, $claveHash);
 
 if ($stmt->execute()) {
     echo json_encode(["success" => true, "mensaje" => "Registro exitoso."]);

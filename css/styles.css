@@ -1,3 +1,11 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -7,55 +15,48 @@ body {
 }
 
 header {
-    background-color: #005c8d;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
-    padding: 2rem 0;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-header h1 {
-    margin: 0;
-    font-size: 3rem;
-    letter-spacing: 2px;
-    font-weight: 700;
+nav {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 0;
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
-    text-align: center;
-    background-color: #006d9c;
-    margin: 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    justify-content: center;
 }
 
-nav ul li {
-    display: inline-block;
-    margin: 0 20px;
+nav a {
+    color: white !important;
+    font-weight: 500;
+    padding: 0.5rem 1.5rem !important;
+    transition: all 0.3s;
+    border-radius: 4px;
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem;
-    padding: 8px 16px;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-}
-
-nav ul li a:hover {
-    background-color: #004c72;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
 }
 
 main {
+    max-width: 1200px;
+    margin: 30px auto; /* centrado */
     padding: 3rem 2rem;
     background-color: #ffffff;
-    margin-top: 30px;
     border-radius: 8px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
+
+#titulo-Principal{
+    color: white;
+}
+
 
 h2 {
     text-align: center;
@@ -168,13 +169,14 @@ body {
 }
 
 
+/* Sección específica para las tarjetas de amenidades */
+
 section {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 20px;
 }
-
 
 .card-container {
     display: flex; 
@@ -189,7 +191,6 @@ section {
     border-radius: 8px;
     padding: 20px;
     margin: 20px 0;
-    
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -208,20 +209,73 @@ section {
     transition: background-color 0.3s ease;
 }
 
-
 .card a:hover {
     text-decoration: underline;
 }
 
 .card img {
     max-width: 100%;
-    
     height: auto;
-   
     margin-bottom: 15px;
-    
 }
 
+.amenidad-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px; /* Se ajusta el tamaño para que las tarjetas no sean demasiado grandes */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.amenidad-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.amenidad-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.amenidad-card h3 {
+    font-size: 1.5rem;
+    color: #005c8d;
+    margin-top: 0;
+}
+
+.amenidad-card p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.amenidad-card .card-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.amenidad-card .btn {
+    padding: 10px 16px;
+    background-color: #0075a2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    width: 45%;
+    text-align: center;
+}
+
+.amenidad-card .btn:hover {
+    background-color: #005c8d;
+    text-decoration: underline;
+}
 
 aside {
     margin-top: 20px;
@@ -234,33 +288,120 @@ aside h3 {
     margin-bottom: 10px;
 }
 
-
 aside {
     background-color: #f4f4f4;
-    
     padding: 20px;
     margin-top: 20px;
     margin-left: 10px;
-    
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    
     width: 300px;
-    
     position: relative;
-    
 }
-
 
 aside h3 {
     font-size: 1.5em;
     margin-bottom: 15px;
     color: #333;
-    
     font-weight: bold;
 }
 
-#pAside{
+#pAside {
     color: blue;
+}
 
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Múltiples columnas */
+    gap: 20px;
+    justify-content: center; /* Centra los cards */
+    padding: 20px;
+}
+
+/* Estilo individual para cada card */
+.card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto de hover */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #005c8d;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card .card-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.card .btn {
+    padding: 10px 16px;
+    background-color: #0075a2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    width: 45%;
+    text-align: center;
+}
+
+.card .btn:hover {
+    background-color: #005c8d;
+    text-decoration: underline;
+}
+
+/* Media Queries para hacerlo responsive */
+@media screen and (max-width: 768px) {
+    .card-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Menos columnas en pantallas pequeñas */
+    }
+
+    .card { 
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card-container {
+        grid-template-columns: 1fr; /* Una columna en pantallas muy pequeñas */
+    }
+
+    .card {
+        padding: 10px;
+    }
+
+    .card h3 {
+        font-size: 1.2rem;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+    }
 }
